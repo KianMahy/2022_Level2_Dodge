@@ -63,6 +63,16 @@ namespace _2022_Level2_Dodge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _5532919 {
+            get {
+                object obj = ResourceManager.GetObject("_5532919", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap alien1 {
             get {
                 object obj = ResourceManager.GetObject("alien1", resourceCulture);
@@ -73,9 +83,39 @@ namespace _2022_Level2_Dodge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap laser_beam {
+            get {
+                object obj = ResourceManager.GetObject("laser_beam", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap laser_beam_blue1 {
+            get {
+                object obj = ResourceManager.GetObject("laser_beam_blue1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap planet1 {
             get {
                 object obj = ResourceManager.GetObject("planet1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap retro_flying_saucer_eps_illustration_gg54139354 {
+            get {
+                object obj = ResourceManager.GetObject("retro_flying_saucer_eps_illustration_gg54139354", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Spaceship.cs" />
     <Compile Include="FrmDodge.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +87,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\planet1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5532919.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doodle-meteor-vector-illustration_gg74590441.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\38155.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\retro-flying-saucer-eps-illustration_gg54139354.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\laser-beam.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\laser-beam_blue.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\laser-beam_blue.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
