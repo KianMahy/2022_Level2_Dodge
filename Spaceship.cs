@@ -68,8 +68,38 @@ namespace _2022_Level2_Dodge
             }
 
 
+            if (move == "up")
+            {
+                if (spaceRec.Location.Y > 450) // is spaceship within 50 of top side
+                {
+
+                    y = 450;
+                    spaceRec.Location = new Point(x, y);
+                }
+                else
+                {
+                    y += -5;
+                    spaceRec.Location = new Point(x, y);
+                }
+            }
+
+            if (move == "down")
+            {
+                if (spaceRec.Location.Y > 450) // is spaceship within 50 of top side
+                {
+
+                    y = 450;
+                    spaceRec.Location = new Point(x, y);
+                }
+                else
+                {
+                    y += 5;
+                    spaceRec.Location = new Point(x, y);
+                }
+            }
+
         }
-
     }
-
 }
+
+

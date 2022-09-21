@@ -13,7 +13,7 @@ namespace _2022_Level2_Dodge
 {
     public partial class FrmDodge : Form
     {
-        bool left, right;
+        bool left, right, up, down;
         string move;
         int score, lives;
         bool x, y;
@@ -82,7 +82,14 @@ namespace _2022_Level2_Dodge
                     CheckLives();
                 }
 
-               
+                if (score == 20)
+                {
+                  
+                    TmrShip.Enabled = true;
+                    TmrShip_move.Enabled = true;
+                    Tmrplanetup.Enabled = true;
+                    
+                }
 
             }
             PnlGame.Invalidate();//makes the paint event fire to redraw the panel
@@ -92,7 +99,8 @@ namespace _2022_Level2_Dodge
         {
             if (e.KeyData == Keys.Left) { left = true; }
             if (e.KeyData == Keys.Right) { right = true; }
-
+            if (e.KeyData == Keys.Up) { up = true; }
+            if (e.KeyData == Keys.Down) { down = true; }
         }
 
         private void FrmDodge_KeyUp(object sender, KeyEventArgs e)
@@ -100,7 +108,8 @@ namespace _2022_Level2_Dodge
 
             if (e.KeyData == Keys.Left) { left = false; }
             if (e.KeyData == Keys.Right) { right = false; }
-
+            if (e.KeyData == Keys.Up) { up = false; }
+            if (e.KeyData == Keys.Down) { down = false; }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -120,18 +129,20 @@ namespace _2022_Level2_Dodge
                 move = "left";
                 spaceship.MoveSpaceship(move);
             }
-
-            if (score == 20)
+            if (up) // if up arrow key pressed
             {
-                spaceship.x = 50;
-                spaceship.y = 20;
-                TmrShip.Enabled = true;
-                TmrShip_move.Enabled = true;
-                
+                move = "up";
+                spaceship.MoveSpaceship(move);
+            }
+            if (down) // if up arrow key pressed
+            {
+                move = "down";
+                spaceship.MoveSpaceship(move);
             }
 
         }
        
+
 
         private void MnuStart_Click(object sender, EventArgs e)
         {
@@ -148,7 +159,7 @@ namespace _2022_Level2_Dodge
         {
             TmrShip.Enabled = false;
             TmrPlanet.Enabled = false;
-
+            
         }
 
         private void FrmDodge_Load(object sender, EventArgs e)
@@ -160,7 +171,32 @@ namespace _2022_Level2_Dodge
 
         private void TmrShip_move_Tick(object sender, EventArgs e)
         {
-            int RotateFlipType = 180;
+        }
+
+        private void Tmrplanetup_Tick(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 7; i++)
+            {
+                planet[i].MovePlanet();
+
+                //if a planet reaches the top of the Game Area reposition it at the bottem
+                if (planet[i].y >= PnlGame.Height)
+                {
+                    score += 1;//update the score
+                    LblScore.Text = score.ToString();// display score
+                    planet[i].y = -30;
+
+                }
+
+                if (spaceship.spaceRec.IntersectsWith(planet[i].planetRec))
+                {
+                    //reset planet[i] back to bottm of panel
+                    planet[i].y = -30; // set  y value of planetRec
+                    lives -= 1;// lose a life
+                    LblLives.Text = lives.ToString();// display number of lives
+                    CheckLives();
+                }
+            }
         }
 
         private void LblScore_Click(object sender, EventArgs e)
@@ -168,12 +204,17 @@ namespace _2022_Level2_Dodge
        
         }
 
-       
+        private void FrmDodge_KeyPress(object sender, KeyPressEventArgs e)
+        {
+         
+        }
 
         private void LblLives_Click(object sender, EventArgs e)
         {
         
         }
+
+
         private void CheckLives()
         {
             if (lives == 0)

@@ -44,6 +44,7 @@ namespace _2022_Level2_Dodge
             this.MnuStart = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuStop = new System.Windows.Forms.ToolStripMenuItem();
             this.TmrShip_move = new System.Windows.Forms.Timer(this.components);
+            this.Tmrplanetup = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -159,6 +160,10 @@ namespace _2022_Level2_Dodge
             // 
             this.TmrShip_move.Tick += new System.EventHandler(this.TmrShip_move_Tick);
             // 
+            // Tmrplanetup
+            // 
+            this.Tmrplanetup.Tick += new System.EventHandler(this.Tmrplanetup_Tick);
+            // 
             // FrmDodge
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -180,6 +185,7 @@ namespace _2022_Level2_Dodge
             this.Text = "Dodge";
             this.Load += new System.EventHandler(this.FrmDodge_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmDodge_KeyDown);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FrmDodge_KeyPress);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmDodge_KeyUp);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -204,6 +210,7 @@ namespace _2022_Level2_Dodge
         private System.Windows.Forms.ToolStripMenuItem MnuStart;
         private System.Windows.Forms.ToolStripMenuItem MnuStop;
         private System.Windows.Forms.Timer TmrShip_move;
+        private System.Windows.Forms.Timer Tmrplanetup;
     }
 }
 
